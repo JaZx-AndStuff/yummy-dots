@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Rigidbody2D rb;
     Vector2 move;
+    public CoinManager cm;
 
    
     void OnMove(InputValue value)
@@ -25,5 +26,14 @@ public class PlayerMovement : MonoBehaviour
     private void Run()
     {
         rb.velocity = move * 4;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            Destroy(collision.gameObject);
+            cm.coinCount++;
+        }
     }
 }
