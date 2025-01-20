@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Run()
     {
-        rb.velocity = move * 4;
+        rb.velocity = move * moveMultiplyer;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
