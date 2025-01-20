@@ -7,11 +7,8 @@ public class PortalLeft : MonoBehaviour
     [SerializeField] Transform transform;
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("Player"))
-        {
-            return;
-        }
+    { 
         collision.transform.Translate(transform.position);
+        //moves player position to other side 
     }
 }

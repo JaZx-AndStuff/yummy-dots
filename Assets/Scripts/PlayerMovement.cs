@@ -5,8 +5,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
+    private float moveMultiplyer = 4f;
+
     [SerializeField] Rigidbody2D rb;
     Vector2 move;
+
    
     void OnMove(InputValue value)
     {

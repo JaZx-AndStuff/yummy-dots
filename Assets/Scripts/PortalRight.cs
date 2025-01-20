@@ -8,10 +8,7 @@ public class PortalRight : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player"))
-        {
-            return;
-        }
-        collision.transform.Translate(transform.position);
+        collision.transform.Translate(transform.position); 
+        //moves player position to other side 
     }
 }
