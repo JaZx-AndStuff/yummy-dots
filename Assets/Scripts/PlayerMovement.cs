@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     Vector2 move;
     public CoinManager cm;
+    public GameObject cv;
 
    
     void OnMove(InputValue value)
@@ -34,6 +35,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(collision.gameObject);
             cm.coinCount++;
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Time.timeScale = 0;
+            cv.SetActive(true);
+            //freezes time with .timeScale and opens the game over menu 
+            
         }
     }
 }
